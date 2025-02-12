@@ -1,10 +1,13 @@
-const API_KEY = import.meta.env.VITE_API_KEY; // Load API key from .env
+const API_KEY = import.meta.env.VITE_API_KEY;  // Loads the API key from .env file
+
 const API_URL = "https://api.football-data.org/v4/players/";
 
 export const fetchPlayer = async (playerId) => {
   try {
     const response = await fetch(`${API_URL}${playerId}`, {
-      headers: { 'X-Auth-Token': API_KEY },
+      headers: {
+        'X-Auth-Token': API_KEY,  // Pass the API key in the headers
+      },
     });
 
     if (!response.ok) {
@@ -15,4 +18,4 @@ export const fetchPlayer = async (playerId) => {
   } catch (error) {
     console.error("Error fetching player:", error);
   }
-}; 
+};

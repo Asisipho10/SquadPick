@@ -18,18 +18,22 @@ const TeamBuilder = ({ players }) => {
 
     const { source, destination } = result;
 
+    // Move player from available to team
     if (source.droppableId === "availablePlayers" && destination.droppableId === "team") {
       if (team.length >= MAX_TEAM_SIZE) return;
 
       const newPlayer = availablePlayers[source.index];
-      setTeam([...team, newPlayer]);
-      setAvailablePlayers(availablePlayers.filter((_, idx) => idx !== source.index));
+      setTeam((prevTeam) => [...prevTeam, newPlayer]);
+      setAvailablePlayers((prevAvailablePlayers) =>
+        prevAvailablePlayers.filter((_, idx) => idx !== source.index)
+      );
     } 
     
+    // Move player from team back to available
     else if (source.droppableId === "team" && destination.droppableId === "availablePlayers") {
       const returningPlayer = team[source.index];
-      setAvailablePlayers([...availablePlayers, returningPlayer]);
-      setTeam(team.filter((_, idx) => idx !== source.index));
+      setAvailablePlayers((prevAvailablePlayers) => [...prevAvailablePlayers, returningPlayer]);
+      setTeam((prevTeam) => prevTeam.filter((_, idx) => idx !== source.index));
     }
   };
 
@@ -70,6 +74,7 @@ const TeamBuilder = ({ players }) => {
                 </Draggable>
               ))}
               {provided.placeholder}
+              {team.length >= MAX_TEAM_SIZE && <p className="team-full">Team is full</p>}
             </div>
           )}
         </Droppable>

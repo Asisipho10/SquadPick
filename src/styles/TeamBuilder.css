@@ -1,20 +1,33 @@
 .team-builder {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .players-list, .team-list {
-    width: 45%;
-    min-height: 400px;
-    border: 2px dashed #ccc;
-    padding: 10px;
-    background: #f9f9f9;
-  }
-  
-  h3 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.players-list, .team-list {
+  width: 45%;
+  min-height: 400px;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.team-full {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.players-list .player-card, .team-list .player-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.players-list .player-card:hover, .team-list .player-card:hover {
+  transform: scale(1.05);
+}

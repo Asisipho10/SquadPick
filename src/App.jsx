@@ -9,20 +9,38 @@ const App = () => {
   const [players, setPlayers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [positionFilter, setPositionFilter] = useState('');
+  const [loading, setLoading] = useState(true); // Added loading state
+  const [error, setError] = useState(null); // Added error state
 
   useEffect(() => {
     fetchPlayers()
-      .then(data => setPlayers(data))
-      .catch(err => console.error('Error fetching players:', err));
+      .then(data => {
+        setPlayers(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching players:', err);
+        setError('Failed to load players.');
+        setLoading(false);
+      });
   }, []);
 
   const handleSearchChange = (e) => setSearchTerm(e.target.value);
   const handlePositionFilterChange = (e) => setPositionFilter(e.target.value);
 
-  const filteredPlayers = players.filter(player =>
-    player.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (positionFilter ? player.position === positionFilter : true)
-  );
+  const filteredPlayers = players.filter(player => {
+    const matchesName = player.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesPosition = positionFilter ? player.position === positionFilter : true;
+    return matchesName && matchesPosition;
+  });
+
+  if (loading) {
+    return <div>Loading players...</div>; // Show loading state
+  }
+
+  if (error) {
+    return <div>{error}</div>; // Show error message if any
+  }
 
   return (
     <div className="app">
@@ -33,7 +51,7 @@ const App = () => {
         onSearchChange={handleSearchChange}
         onPositionFilterChange={handlePositionFilterChange}
       />
-      <TeamBuilder players={filteredPlayers} setPlayers={setPlayers} />
+      <TeamBuilder players={filteredPlayers} />
       <SocialShare />
     </div>
   );
