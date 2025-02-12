@@ -5,6 +5,7 @@ import SocialShare from './components/SocialShare';
 import { fetchPlayers } from './services/api';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
+
 const App = () => {
   const [players, setPlayers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');

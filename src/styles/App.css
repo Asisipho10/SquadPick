@@ -1,0 +1,68 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Center the app */
+  body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* App container */
+  .app-container {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+.app {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.players-container {
+  display: flex;
+  overflow-x: auto;
+}
+
+.player-card {
+  width: 120px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4;
+  cursor: move;
+}
+
+.search-filter {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-filter input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.search-filter select {
+  padding: 10px;
+}
+
+.social-share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
