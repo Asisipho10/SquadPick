@@ -1,0 +1,41 @@
+.app {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.players-container {
+  display: flex;
+  overflow-x: auto;
+}
+
+.player-card {
+  width: 120px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4;
+  cursor: move;
+}
+
+.search-filter {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-filter input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.search-filter select {
+  padding: 10px;
+}
+
+.social-share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
