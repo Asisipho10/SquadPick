@@ -1,3 +1,5 @@
+import "../styles/PlayerCard.css";
+
 const PlayerCard = ({ player }) => {
   return (
     <div className="player-card">

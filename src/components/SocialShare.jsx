@@ -1,4 +1,5 @@
 import { FacebookShareButton, TwitterShareButton, FacebookIcon, TwitterIcon } from 'react-share';
+import "../styles/SocialShare.css";
 
 const SocialShare = () => {
   const shareUrl = window.location.href; // or customize it with a team URL

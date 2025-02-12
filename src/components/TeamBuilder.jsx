@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
-import PlayerCard from "./PlayerCard";
-import "./TeamBuilder.css";
+import PlayerCard from "../components/PlayerCard";
+import "../styles/TeamBuilder.css";
 
 const MAX_TEAM_SIZE = 11;
 

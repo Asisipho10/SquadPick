@@ -1,3 +1,5 @@
+import "../styles/SearchFilter.css";
+
 const SearchFilter = ({ searchTerm, positionFilter, onSearchChange, onPositionFilterChange }) => {
   return (
     <div className="search-filter">
