@@ -1,0 +1,46 @@
+.player-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .player-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .player-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  
+  .player-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .player-position {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .drag-handle {
+    cursor: grab;
+    font-size: 18px;
+    color: #555;
+  }
+  
